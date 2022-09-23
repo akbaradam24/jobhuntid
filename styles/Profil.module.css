@@ -16,3 +16,36 @@
     padding: 30px 0px;
     border-bottom: 1px solid black;
 }
+.formContainer{
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    align-items: center;
+    margin: auto;
+}
+.formContainer input{
+    border: 1px solid black;
+    border-radius: 1px;
+    width: 100%;
+}
+.formContainer form{
+    width: 100%;
+}
+.formContainerhide{
+    display: none;;
+}
+.buttonTambah{
+    display: flex;
+    color: rgb(25, 140, 206);
+    border: 1px solid #111;
+    border-radius: 5px;
+    padding: 2px 5px;
+    margin-top: 5px;
+}
+.containerButtonTambah{
+    display: flex;
+    margin: auto;
+    width: 40%;
+    align-items: center;
+    justify-content: space-between;
+}

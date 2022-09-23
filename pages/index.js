@@ -1,8 +1,21 @@
+import { useState } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import styles from '../styles/Home.module.css'
+import {useRouter} from 'next/router'
+
 export default function index() {
+  const [email,setEmail] = useState()
+  const [password,setPassword] = useState()
+  const router = useRouter()
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    router.push('/profil');
+
+
+  }
   return (
     <div className="">
       <Head>
@@ -16,12 +29,12 @@ export default function index() {
         <Image src="/icon.png" width={20} height={20} alt="login" quality={100}/> 
       </div>
       <div className={styles.fromContainer}>
-        <form className={styles.forminput}>
+        <form onSubmit={handleSubmit} className={styles.forminput}>
           <p>Halo !</p>
           <p>Silahkan masukkan data di bawah ini</p>
-          <input type="email" placeholder="email"></input>
-          <input type="password" placeholder="password"></input>
-          <button>Masuk</button>
+          <input type="email" onChange={e=> setEmail(e.target.value)} placeholder="email"></input>
+          <input type="password" onChange={e=> setPassword(e.target.value)} placeholder="password"></input>
+          <button type='submit' onClick={e => handleSubmit(e)}>Masuk</button>
           <p>Belum punya akun? <Link href="/register">Daftar Sekarang</Link></p>
         </form>
       </div>
