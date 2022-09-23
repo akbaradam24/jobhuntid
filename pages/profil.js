@@ -2,7 +2,7 @@ import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link'
 import styles from '../styles/Profil.module.css'
-export default function profil({dataLocations}) {
+export default function profil({dataLocations , dataProvinsi}) {
   const [privatelogic, setprivatelogic] = useState(false);
   const [studieslogic, setStudiesLogic] = useState(false);
   const [sertfikat, setSertfikat] = useState(false);
@@ -17,8 +17,9 @@ export default function profil({dataLocations}) {
   const handleShowSertfikat = () =>{
     setSertfikat(!sertfikat);
   }
-
-  console.log(dataLocations)
+  const data = dataLocations.data;
+  const datapro = dataProvinsi.data
+  console.log(datapro)
   return (
     <>
     <div className={styles.NavbarContainer}>
@@ -51,9 +52,17 @@ export default function profil({dataLocations}) {
           <p>Alamat Lengkap</p>
           <input type="text"></input>
           <p>Provinsi</p>
-          <input type="dropdown"></input>
-          <p>Provinsi</p>
-          <input type="dropdown"></input>
+            <select>
+              {datapro.map((e) =>( 
+                <option>{e.NamaProvinsi}</option>
+              ))}
+            </select>
+          <p>Kota / Kabupaten</p>
+          <select>
+              {data.map((e) =>( 
+                <option>{e.NamaKota}</option>
+              ))}
+            </select>
         </form>
       </div>
       <div className={styles.container}>
@@ -82,9 +91,20 @@ export default function profil({dataLocations}) {
 export async function getStaticProps(){
   const response = await fetch('https://permata-test-api.herokuapp.com/api/v1/data_kota');
   const dataLocations= await response.json();
+  const res = await fetch('https://permata-test-api.herokuapp.com/api/v1/data_provinsi');
+  const dataProvinsi = await res.json();
   return {
     props:{
       dataLocations,
+      dataProvinsi,
     }
   }
 }
+// export async function getStaticProp(){
+  
+//   return {
+//     props:{
+      
+//     }
+//   }
+// }
