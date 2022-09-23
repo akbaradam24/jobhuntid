@@ -1,0 +1,18 @@
+.NavbarContainer{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px;
+}
+.imageNavbar{
+    display: flex;
+    gap: 10px;
+}
+.container{
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+    align-items: center;
+    margin: auto;
+    padding: 30px 0px;
+    border-bottom: 1px solid black;
+}

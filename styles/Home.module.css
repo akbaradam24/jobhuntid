@@ -1,0 +1,39 @@
+.container {
+  padding: 0 2rem;
+}
+
+.main {
+  min-height: 100vh;
+  padding: 4rem 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.left{
+  background-image: url("../public/login.png");
+  width: 50vw;
+  height: 50vw;
+  background-size: cover;;
+}
+
+.mainContainer{
+  display: flex;
+}
+.forminput{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+}
+.fromContainer{
+  margin-left: 20%;
+  display: flex;
+}
+
+
+
+

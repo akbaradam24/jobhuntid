@@ -1,0 +1,22 @@
+.left{
+    background-image: url("../public/login.png");
+    width: 50vw;
+    height: 50vw;
+    background-size: cover;;
+  }
+  
+  .mainContainer{
+    display: flex;
+  }
+  .forminput{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+  }
+  .fromContainer{
+    margin-left: 20%;
+    display: flex;
+  }
+  
